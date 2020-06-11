@@ -36,7 +36,7 @@ export LIBGME_LDFLAGS=-lgme
 make -C src/ LINUX64=1
 ```
 
-The game's assetq are here : https://github.com/B4rabbas/Kart-Public/releases/tag/1.2
+The game's assets are here : https://github.com/B4rabbas/Kart-Public/releases/tag/1.2
 
 
 
