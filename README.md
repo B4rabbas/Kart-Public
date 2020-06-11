@@ -1,4 +1,4 @@
-Forked to change the bind/event key recognition (in https://github.com/B4rabbas/Kart-Public/blob/master/src/sdl/i_video.c )
+Forked to change the bind/event key recognition (in https://github.com/B4rabbas/Kart-Public/blob/master/src/sdl/i_video.c https://github.com/B4rabbas/Sonic-Kart/edit/master/README.md)
 
 # SRB2Kart
 
