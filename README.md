@@ -1,4 +1,4 @@
-Fork to change the sanc code recognition
+Forked to change the sanc code recognition
 
 # SRB2Kart
 
