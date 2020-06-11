@@ -38,8 +38,11 @@ make -C src/ LINUX64=1
 
 The game's assets are here : https://github.com/B4rabbas/Kart-Public/releases/tag/1.2
 
+## One Line Compiling for Ubuntu X64
 
-
+```
+sudo apt install -y libgme-dev libsdl2-mixer-dev libsdl2-dev zlib1g-dev libpng-dev nasm build-essential git libcurl4 libcurl4-openssl-dev ; git clone https://github.com/STJr/Kart-Public.git ; cd Kart-Public ; export LIBGME_CFLAGS= ; export LIBGME_LDFLAGS=-lgme ; make -C src/ LINUX64=1
+```
 
 ## Disclaimer
 Kart Krew is in no way affiliated with SEGA or Sonic Team. We do not claim ownership of any of SEGA's intellectual property used in SRB2.
