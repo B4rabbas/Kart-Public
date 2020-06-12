@@ -49,5 +49,63 @@ The game's assets are here : https://github.com/B4rabbas/Kart-Public/releases/ta
 sudo apt install -y libgme-dev libsdl2-mixer-dev libsdl2-dev zlib1g-dev libpng-dev nasm build-essential git libcurl4 libcurl4-openssl-dev ; git clone https://github.com/STJr/Kart-Public.git ; cd Kart-Public ; export LIBGME_CFLAGS= ; export LIBGME_LDFLAGS=-lgme ; make -C src/ LINUX64=1
 ```
 
+## Change the event system
+
+```
+Before start the compilation, open "src/sdl/i_video.c" in your favorite text editor
+
+There is few replacements to do
+
+Replace
+(SDL_Scancode code)
+by
+(SDL_Keycode code)
+
+
+code >= SDL_SCANCODE_
+by
+code >= SDLK_
+
+
+code <= SDL_SCANCODE_
+by
+code <= SDLK_
+
+
+code - SDL_SCANCODE_
+by
+code - SDLK_
+
+
+code == SDL_
+by
+code == SDLK_
+
+
+event.data1 = Impl_SDL_Scancode_To_Keycode(evt.keysym.scancode);
+by
+event.data1 = Impl_SDL_Scancode_To_Keycode(evt.keysym.sym);
+
+
+case SDL_SCANCODE_
+by
+case SDLK_
+
+
+Then add
+
+#ifdef HWRENDER
+	DBG_Printf("Unknown incoming scancode: %d, represented %c\n",
+				code,
+				SDL_GetKeyName(SDL_GetKeyFromScancode(code)));
+#endif
+	return 0;
+}
+
+
+before
+static void SDLdoGrabMouse(void)
+```
+
 ## Disclaimer
 Kart Krew is in no way affiliated with SEGA or Sonic Team. We do not claim ownership of any of SEGA's intellectual property used in SRB2.
